@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: websocket-testcase
+  labels:
+    name: websocket-testcase
+  namespace: websocket-testcase-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: websocket-testcase
+  template:
+    metadata:
+      labels:
+        name: websocket-testcase
+    spec:
+      containers:
+      - name: websocket-testcase
+        image: mertyildiran/websocket-testcase:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 200m
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 8080
+      nodeSelector:
+        beta.kubernetes.io/os: linux
