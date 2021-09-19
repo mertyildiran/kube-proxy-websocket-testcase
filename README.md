@@ -52,4 +52,4 @@ Failed to set websocket upgrade: %+v websocket: the client is not using the webs
 [GIN] 2021/09/19 - 14:28:56 | 400 |     297.282µs |       127.0.0.1 | GET      "/ws?q=x"
 ```
 
-In conclusion, `Connection: Upgrade` causing query string to disappear.
+In conclusion, `Connection: Upgrade` header is causing the query string to disappear.
