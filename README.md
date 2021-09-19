@@ -27,7 +27,7 @@ curl http://localhost:8080/example/ws
 curl http://localhost:8080/example/ws\?q\=x
 ```
 
-See if it's printing:
+See if the logs have:
 
 ```
 query: map[]
